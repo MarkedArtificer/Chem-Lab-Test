@@ -29,20 +29,24 @@ export default {
 
 		try {
 			// Fetch Player and Recipe details from local PocketBase (Mac Mini)
-			// Make sure your query is renamed to match this, or change this to match your query!
 			const playerResponse = await fetch_player_by_id.run({ playerId: scannedPlayerId });
 			const recipeResponse = await fetch_recipe_by_id.run({ recipeId });
 
-			if (!playerResponse?.length || !recipeResponse?.length) {
-				showAlert("Local record not found. Check PocketBase connection.", "error");
+			// Safely extract the data whether it's wrapped in 'items' or already an array
+			const playerList = playerResponse.items ? playerResponse.items : playerResponse;
+			const recipeList = recipeResponse.items ? recipeResponse.items : recipeResponse;
+
+			// Now check the actual arrays
+			if (!Array.isArray(playerList) || playerList.length === 0 || !Array.isArray(recipeList) || recipeList.length === 0) {
+				showAlert("Local record not found. Check if IDs match the database.", "error");
 				return;
 			}
 
-			const p = playerResponse[0];
-			const r = recipeResponse[0];
+			// Safely grab the first record from each
+			const p = playerList[0];
+			const r = recipeList[0];
 
 			// Construct the URL for the Assembly Image stored in PocketBase
-			// Updated to match the player-side 'Schematics' collection and 'Picture' field
 			const ip = "192.168.10.63";
 			const assemblyImageUrl = `http://${ip}:8090/api/files/Schematics/${r.id}/${r.Picture}`;
 
@@ -58,7 +62,7 @@ export default {
 				Debug: p.Debug || false,
 				// Recipe Details
 				recipe_id: r.id,
-				recipe_name: r.Recipe_Name,
+				recipe_name: r.Name,
 				recipe_tier: r.Tier,
 				recipe_code: r.recipe_code.toUpperCase(),
 				recipe_image: assemblyImageUrl
@@ -112,7 +116,7 @@ export default {
 		try {
 			// C. Update the Local PocketBase Record
 			await update_player_progress.run({
-				userId: data.player_id,
+				playerId: data.player_id,
 				tierField: field,
 				newString: updatedStr,
 				lastCompletedID: data.recipe_id,
