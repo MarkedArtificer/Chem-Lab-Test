@@ -45,7 +45,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 42,
   "shouldTruncate": false,
-  "text": "{{ fetch_scanned_user.data.Name }}",
+  "text": "{{ fetch_player_by_id.data.Name }}",
   "textAlign": "LEFT",
   "textColor": "#f4f4f5",
   "topRow": 20,

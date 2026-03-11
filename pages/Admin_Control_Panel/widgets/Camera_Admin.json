@@ -36,7 +36,7 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 17,
   "needsErrorInfo": false,
-  "onCodeDetected": "{{ ScannerProcessor.processScan() }}",
+  "onCodeDetected": "{{\n\tAdmin_Manager.onQRScan()\n}}",
   "originalBottomRow": 51,
   "originalTopRow": 18,
   "parentColumnSpace": 6.84375,
@@ -51,5 +51,5 @@
   "type": "CODE_SCANNER_WIDGET",
   "version": 1,
   "widgetId": "cwy4hyjeov",
-  "widgetName": "ScannerWidget"
+  "widgetName": "Camera_Admin"
 }

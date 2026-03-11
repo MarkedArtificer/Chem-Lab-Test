@@ -2,8 +2,8 @@ export default {
   // 1. Get the current active recipe object
   getActiveRecipe: () => {
     const id = appsmith.store.activeRecipeID;
-    if (!id || !fetch_recipes.data?.items) return null;
-    return fetch_recipes.data.items.find(r => r.id == id) || null;
+    if (!id || !fetch_recipe_by_id.data?.items) return null;
+    return fetch_recipe_by_id.data.items.find(r => r.id == id) || null;
   },
 
   // 2. Construct the high-res image URL
@@ -35,7 +35,7 @@ export default {
    
 
     // 2. Push to the Mac
-    await update_user_progress.run({
+    await update_player_progress.run({
       userId: user.id,
       tierField: field,
       newString: updatedStr,

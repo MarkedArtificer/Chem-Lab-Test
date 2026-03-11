@@ -1,0 +1,7 @@
+{{
+  {
+    [this.params.tierField]: this.params.newString,
+    "Tier": this.params.newTier,
+    "Last_Completed": this.params.lastCompletedID
+  }
+}}

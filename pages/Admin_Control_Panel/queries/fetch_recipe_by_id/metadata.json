@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "697db5243fec2f3159077410_9848f4a4-1cc3-4054-8d1f-37f8872c4651",
-  "id": "Admin_Control_Panel_fetch_scanned_user",
+  "gitSyncId": "697db5243fec2f3159077410_694081b1-407c-4af9-9474-f7737a621f6c",
+  "id": "Admin_Control_Panel_fetch_recipe_by_id",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -24,8 +24,8 @@
       ],
       "queryParameters": [
         {
-          "key": "perPage",
-          "value": "100"
+          "key": "filter",
+          "value": "id='{{this.params.recipeId}}'"
         }
       ],
       "timeoutInMillisecond": 10000
@@ -37,10 +37,14 @@
       "name": "Chem Server",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [],
-    "name": "fetch_scanned_user",
+    "dynamicBindingPathList": [
+      {
+        "key": "queryParameters[0].value"
+      }
+    ],
+    "name": "fetch_recipe_by_id",
     "pageId": "Admin_Control_Panel",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

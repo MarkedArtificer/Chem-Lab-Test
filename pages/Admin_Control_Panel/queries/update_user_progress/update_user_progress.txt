@@ -1,4 +1,0 @@
-{
-  "{{this.params.tierField}}": "{{this.params.newString}}",
-  "Last_Completed": "{{this.params.lastCompletedID}}"
-}

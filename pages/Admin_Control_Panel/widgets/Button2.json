@@ -36,7 +36,7 @@
   "mobileRightColumn": 40,
   "mobileTopRow": 51,
   "needsErrorInfo": false,
-  "onClick": "{{ resetWidget('ScannerWidget') }}",
+  "onClick": "{{ resetWidget('Camera_Admin') }}",
   "parentColumnSpace": 6.84375,
   "parentId": "0",
   "parentRowSpace": 10,

@@ -1,7 +1,7 @@
 export default {
   // 1. Core Logic: The Entry Point for the Scanner
   processScan: async () => {
-    const rawData = ScannerWidget.value; // Adjust to your scanner's name
+    const rawData = Camera_Admin.value; // Adjust to your scanner's name
     if (!rawData) return;
 
     const [scannedUserId, scannedRecipeId] = rawData.split(":");
@@ -13,11 +13,11 @@ export default {
 
     // 2. Fetch the Scanned User and Recipe data from your queries
     // We run these queries with the IDs from the scan
-    await fetch_scanned_user.run({ id: scannedUserId });
+    await fetch_player_by_id.run({ id: scannedUserId });
     await fetch_single_recipe.run({ id: scannedRecipeId });
 
-    const targetUser = fetch_scanned_user.data;
-    const targetRecipe = fetch_scanned_user.data; // Assuming your query returns a single item
+    const targetUser = fetch_player_by_id.data;
+    const targetRecipe = fetch_player_by_id.data; // Assuming your query returns a single item
 
     if (!targetUser || !targetRecipe) {
       showAlert("User or Recipe not found in Database", "error");
@@ -35,7 +35,7 @@ export default {
       const updatedStr = currentStr + code;
 
       // 4. Push update to PocketBase (The Raspberry Pi)
-      await update_user_progress.run({
+      await update_player_progress.run({
         userId: targetUser.id,
         tierField: field,
         newString: updatedStr,

@@ -1,7 +1,7 @@
 export default {
   handleScan: async () => {
     // 1. Get the raw text from the scanner widget
-    const rawData = ScannerWidget.value; 
+    const rawData = Camera_Admin.value; 
 
     // 2. Split the string at the colon
     const parts = rawData.split(":");
