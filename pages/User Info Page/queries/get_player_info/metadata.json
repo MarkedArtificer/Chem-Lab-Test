@@ -1,6 +1,6 @@
 {
   "gitSyncId": "697db5243fec2f3159077410_27feb5f6-7987-4567-a904-4321cd43c2ff",
-  "id": "User Info Page_chemist_status_update",
+  "id": "User Info Page_get_player_info",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -34,15 +34,12 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "queryParameters[0].value"
-      },
-      {
         "key": "path"
       }
     ],
-    "name": "chemist_status_update",
+    "name": "get_player_info",
     "pageId": "User Info Page",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

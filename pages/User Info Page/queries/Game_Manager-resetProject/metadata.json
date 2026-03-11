@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "697db5243fec2f3159077410_c749f429-a47e-4e5b-8622-ff9a9a2f1bc6",
-  "id": "User Info Page_Game_Manager.updateChemist",
+  "gitSyncId": "697db5243fec2f3159077410_0570ee3f-a418-426f-b861-93f84587c61c",
+  "id": "User Info Page_Game_Manager.resetProject",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "Game_Manager.updateChemist",
-    "name": "updateChemist",
+    "fullyQualifiedName": "Game_Manager.resetProject",
+    "name": "resetProject",
     "pageId": "User Info Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

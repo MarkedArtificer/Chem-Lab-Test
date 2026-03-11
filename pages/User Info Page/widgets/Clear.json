@@ -39,7 +39,7 @@
   "mobileRightColumn": 53,
   "mobileTopRow": 57,
   "needsErrorInfo": false,
-  "onClick": "{{\nGame_Manager.resetActiveProject();\nresetWidget(\"Resume\");\nresetWidget(\"Clear\");\nresetWidget(\"Schem_Display\")\n}}",
+  "onClick": "{{\nGame_Manager.resetProject();\nresetWidget(\"Resume\");\nresetWidget(\"Clear\");\nresetWidget(\"Schem_Display\")\n}}",
   "originalBottomRow": 61,
   "originalTopRow": 57,
   "parentColumnSpace": 17.28125,

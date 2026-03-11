@@ -1,11 +1,6 @@
 export default {
 
-	updateChemist: () =>{
-	const userData = chemist_status_update.run();
-//	return	chemist_status_update.run();
-	storeValue('currentUser', userData); 
 
-	},
 	
   // Pull current settings from the query
   getThresholds: () => {
@@ -19,9 +14,9 @@ export default {
 		storeValue('currentUser', pb_check_chemist.data.items[0]);
 	},
 	
-	updateActiveRecipe: () => {
+/*	updateActiveRecipe: () => {
 		storeValue("activeRecipeID", appsmith.store.currentUser?.Active_Project)
-	},
+	},*/
 	
 tierUpdate: () => {
     const user = appsmith.store.currentUser || {};
@@ -119,11 +114,11 @@ tierUpdate: () => {
   return match ? match.Name : "None";
 },
 	
-	 resetActiveProject: () => {
+/*	 resetActiveProject: () => {
  	storeValue('activeRecipeID', undefined);
 	clear_active_project.run();
 	Game_Manager.updateChemist();
-},
+},*/
 	
 checkAdminStatus: async () => {
     // 1. Run the query we just created
@@ -143,5 +138,30 @@ checkAdminStatus: async () => {
       await storeValue("isAdmin", false);
       await storeValue("staffRole", null);
   }
-}
+},
+resetProject: async () => {
+    // 1. Clear the field in the database
+    await clear_active_project.run();
+		const id = appsmith.store.currentUser.id;
+    // 2. Fetch the fresh data from the server
+    const freshData = await get_player_info.run();
+
+    // 3. Overwrite the 'currentUser' store so the UI reacts instantly
+    await storeValue('currentUser', freshData);
+    
+    // 4. Cleanup local ID tracking
+    await storeValue('activeRecipeID', undefined);
+
+    showAlert("Project Reset", "success");
+  }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
