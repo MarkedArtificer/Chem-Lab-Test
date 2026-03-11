@@ -44,7 +44,7 @@
     ],
     "name": "fetch_player_by_id",
     "pageId": "Admin_Control_Panel",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
