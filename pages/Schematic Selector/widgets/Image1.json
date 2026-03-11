@@ -1,0 +1,44 @@
+{
+  "animateLoading": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 59,
+  "boxShadow": "none",
+  "defaultImage": "https://assets.appsmith.com/widgets/default.png",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "image"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableDownload": false,
+  "enableRotation": false,
+  "flexVerticalAlignment": "start",
+  "image": "{{\n  (() => {\n    // 1. Get the current active record from our manager\n    const active = PreviewManager.getActiveData();\n    \n    // 2. Safety: If no recipe or no picture file, show a placeholder\n    if (!active || !active.Picture) {\n      return \"https://placehold.co/600x400?text=Awaiting+Schematic\";\n    }\n\n    // 3. Construct the PocketBase URL\n    const macIp = \"192.168.10.63\"; \n    const collection = \"Schematics\"; \n    \n    // Pattern: http://IP:PORT/api/files/COLLECTION/ID/FILENAME\n    return `http://${macIp}:8090/api/files/${collection}/${active.id}/${active.Picture}`;\n  })()\n}}",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "rnhi8li8dw",
+  "leftColumn": 26,
+  "maxZoomLevel": 1,
+  "mobileBottomRow": 43,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 51,
+  "mobileTopRow": 31,
+  "needsErrorInfo": false,
+  "objectFit": "contain",
+  "originalBottomRow": 62,
+  "originalTopRow": 20,
+  "parentColumnSpace": 14.640625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "topRow": 17,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "e5otron2l1",
+  "widgetName": "Image1"
+}

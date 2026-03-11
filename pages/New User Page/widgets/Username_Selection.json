@@ -1,0 +1,80 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": false,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 18,
+  "boxShadow": "none",
+  "defaultText": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "validation"
+    },
+    {
+      "key": "errorMessage"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    },
+    {
+      "key": "onSubmit"
+    },
+    {
+      "key": "onBlur"
+    }
+  ],
+  "errorMessage": "{{ \n  Username_Selection.text.length === 0 \n  ? \"A chemist needs a name!\" \n  : (Username_Selection.text.length < 5 \n    ? \"Username must be at least 5 characters.\" \n    : (IsUnique.data.totalItems > 0 \n      ? \"That handle is already in the database.\" \n      : \"\")) \n}}",
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": true,
+  "isVisible": true,
+  "key": "9pfs8rkqd6",
+  "label": "Enter Username",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "",
+  "labelTextColor": "#f4f4f5",
+  "labelTextSize": "1rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxChars": "30",
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 33,
+  "mobileLeftColumn": 12,
+  "mobileRightColumn": 32,
+  "mobileTopRow": 26,
+  "needsErrorInfo": false,
+  "onBlur": "{{IsUnique.run()}}",
+  "onSubmit": "{{IsUnique.run()}}",
+  "onTextChanged": "",
+  "parentColumnSpace": 10.015625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placeholderText": "CoolChemist420\n",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": false,
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "showStepArrows": false,
+  "tooltip": "Must be at least 5 characters.",
+  "topRow": 11,
+  "type": "INPUT_WIDGET_V2",
+  "validation": "{{ \n  Username_Selection.text.length >= 5 && \n  IsUnique.data.totalItems === 0 \n}}",
+  "version": 2,
+  "widgetId": "n9zc86zg9x",
+  "widgetName": "Username_Selection"
+}

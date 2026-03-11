@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "697db5243fec2f3159077410_f08be919-af86-49ef-b985-071ddc1a0395",
+  "id": "LogIn_Timer",
+  "unpublishedCollection": {
+    "name": "Timer",
+    "pageId": "LogIn",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

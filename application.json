@@ -1,0 +1,81 @@
+{
+  "appIsExample": false,
+  "appLayout": {
+    "type": "MOBILE"
+  },
+  "applicationDetail": {
+    "navigationSetting": {
+      "colorStyle": "theme",
+      "logoAssetId": "",
+      "logoConfiguration": "logoOnly",
+      "navStyle": "inline",
+      "orientation": "top",
+      "position": "static",
+      "showNavbar": false,
+      "showSignIn": false
+    },
+    "themeSetting": {
+      "appMaxWidth": "LARGE",
+      "density": 1.0,
+      "sizing": 1.0
+    }
+  },
+  "applicationVersion": 2,
+  "collapseInvisibleWidgets": true,
+  "color": "#F3F1C7",
+  "evaluationVersion": 2,
+  "pages": [
+    {
+      "id": "LogIn",
+      "isDefault": false
+    },
+    {
+      "id": "New User Page",
+      "isDefault": false
+    },
+    {
+      "id": "User Info Page",
+      "isDefault": false
+    },
+    {
+      "id": "Schematic Selector",
+      "isDefault": false
+    },
+    {
+      "id": "Work Page",
+      "isDefault": false
+    },
+    {
+      "id": "Admin_Control_Panel",
+      "isDefault": false
+    },
+    {
+      "id": "Viewer",
+      "isDefault": false
+    },
+    {
+      "id": "NeoNav Landing",
+      "isDefault": true
+    }
+  ],
+  "unpublishedAppLayout": {
+    "type": "MOBILE"
+  },
+  "unpublishedApplicationDetail": {
+    "navigationSetting": {
+      "colorStyle": "theme",
+      "logoAssetId": "",
+      "logoConfiguration": "logoOnly",
+      "navStyle": "inline",
+      "orientation": "top",
+      "position": "static",
+      "showNavbar": false,
+      "showSignIn": false
+    },
+    "themeSetting": {
+      "appMaxWidth": "LARGE",
+      "density": 1.0,
+      "sizing": 1.0
+    }
+  }
+}

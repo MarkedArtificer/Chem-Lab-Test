@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "697db5243fec2f3159077410_c62d3872-7d1e-464d-9c5f-f176ee93efab",
+  "id": "Admin_Control_Panel_WorkManager",
+  "unpublishedCollection": {
+    "name": "WorkManager",
+    "pageId": "Admin_Control_Panel",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

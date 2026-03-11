@@ -1,0 +1,65 @@
+export default {
+  // Pull current settings from the query
+  getThresholds: () => {
+    // Ensure we handle the first record of the array from PocketBase
+    const data = fetch_game_settings.data;
+    return (Array.isArray(data) ? data[0] : data) || { T1Threshold: 2, T2Threshold: 4, T3Threshold: 4, T4Threshold: 4 };
+  },
+
+tierUpdate: () => {
+    const user = appsmith.store.currentUser || {};
+    const settings = Game_Manager.getThresholds();
+    
+    // Direct length measurement for the automated system
+    const t1Count = (user.T1_Completion || "").length;
+    const t2Count = (user.T2_Completion || "").length;
+    const t3Count = (user.T3_Completion || "").length;
+    const t4Count = (user.T4_Completion || "").length;
+    
+    let earnedTier = Number(user.Tier || 1);
+
+    if (!user.Debug) {
+      if (earnedTier === 1 && t1Count >= settings.T1Threshold) earnedTier = 2;
+      if (earnedTier === 2 && t2Count >= settings.T2Threshold) earnedTier = 3;
+      if (earnedTier === 3 && t3Count >= settings.T3Threshold) earnedTier = 4;
+      if (earnedTier === 4 && t4Count >= settings.T4Threshold) earnedTier = 5;
+    }
+
+    return { t1Count, t2Count, t3Count, t4Count, earnedTier };
+	  
+  },
+  
+	getCurrentProgress: () => {
+    const user = appsmith.store.currentUser || {};
+    const settings = Game_Manager.getThresholds();
+    const tier = Number(user.Tier || 1);
+
+    // Simple length check since the system is closed-loop
+    const stats = {
+      1: { count: (user.T1_Completion || "").length, goal: Number(settings.T1Threshold) },
+      2: { count: (user.T2_Completion || "").length, goal: Number(settings.T2Threshold) },
+      3: { count: (user.T3_Completion || "").length, goal: Number(settings.T3Threshold) },
+      4: { count: (user.T4_Completion || "").length, goal: Number(settings.T4Threshold) }
+    };
+
+    return stats[tier] || { count: 0, goal: 1 };
+  },
+	
+	syncTier: async () => {
+    const user = appsmith.store.currentUser || {};
+    const results = Game_Manager.tierUpdate(); // Runs the length-based count
+
+    // Only proceed if not in Debug mode and an upgrade is actually earned
+    if (!user.Debug && results.earnedTier > Number(user.Tier)) {
+      
+      // 1. Update the PocketBase record
+      await update_user_tier.run({ "newTier": results.earnedTier });
+      
+      // 2. Update the local store so the UI reflects it instantly
+      await storeValue("currentUser", { ...user, Tier: results.earnedTier });
+      
+      // 3. Notify the player
+      showAlert(`RANK INCREASED: TIER ${results.earnedTier} AUTHORIZED`, "success");
+    }
+  }
+}

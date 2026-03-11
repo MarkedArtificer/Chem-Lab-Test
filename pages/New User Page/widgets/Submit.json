@@ -1,0 +1,65 @@
+{
+  "animateLoading": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 37,
+  "boxShadow": "none",
+  "buttonColor": "{{ Submit.isDisabled ? '#A9A9A9' : '#03B300' }}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "tooltip"
+    },
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{ \n  !Username_Selection.isValid ||   !Password_Verification.isValid|| \n Username_Selection.text.length === 0 ||\n  IsUnique.isLoading\n}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "i1uhj1bc2j",
+  "leftColumn": 20,
+  "minWidth": 120,
+  "mobileBottomRow": 37,
+  "mobileLeftColumn": 20,
+  "mobileRightColumn": 36,
+  "mobileTopRow": 33,
+  "needsErrorInfo": false,
+  "onClick": "{{New_User.run().then(() => {\n  showModal(mdl_nickname.name);\n  postWindowMessage('Success! Account registered', \"window\", \"*\");\n  Rank_Update.run();\n});}}",
+  "parentColumnSpace": 10.015625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 36,
+  "text": "Generate Account",
+  "tooltip": "{{ \n  Username_Selection.text.length === 0 ? \"You need a username first!\" :\n Username_Selection.text.length < 5 ? \"Username is too short.\" :\n  IsUnique.data.totalItems > 0 ? \"That username is taken.\" :\n Password_Selection.text.length < 8 ? \"Password must be 8+ characters.\" :\n  Password_Selection.text !== Password_Verification.text ? \"Passwords don't match!\" :\n  \"\" \n}}",
+  "topRow": 33,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "d29x6sizxz",
+  "widgetName": "Submit"
+}

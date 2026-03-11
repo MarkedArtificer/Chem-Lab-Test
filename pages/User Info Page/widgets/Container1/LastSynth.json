@@ -1,0 +1,52 @@
+{
+  "animateLoading": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 48,
+  "boxShadow": "none",
+  "defaultImage": "https://assets.appsmith.com/widgets/default.png",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "image"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableDownload": false,
+  "enableRotation": false,
+  "flexVerticalAlignment": "start",
+  "image": "{{\n  (() => {\n    // 1. Get the current active record\n    const active = PreviewManager.getActiveData();\n    const macIp = \"192.168.10.63\";\n    const collection = \"Schematics\";\n    const placeholder = \"https://placehold.co/600x400?text=Awaiting+Schematic\";\n\n    // 2. Multi-point Safety Check\n    // Check if 'active' exists AND has both required properties to build a URL\n    if (!active || !active.id || !active.Picture) {\n      return placeholder;\n    }\n\n    // 3. Construct the PocketBase URL only when data is fully verified\n    // Pattern: http://IP:PORT/api/files/COLLECTION/ID/FILENAME\n    return `http://${macIp}:8090/api/files/${collection}/${active.id}/${active.Picture}`;\n  })()\n}}",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": "{{ \n  !!PreviewManager.getActiveData()?.id && \n  !!PreviewManager.getActiveData()?.Picture \n}}",
+  "key": "qiat3v9fvn",
+  "leftColumn": 0,
+  "maxZoomLevel": 1,
+  "mobileBottomRow": 32,
+  "mobileLeftColumn": 29,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 20,
+  "needsErrorInfo": false,
+  "objectFit": "contain",
+  "originalBottomRow": 48,
+  "originalTopRow": 8,
+  "parentColumnSpace": 6.84375,
+  "parentId": "7a2pps91m0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "topRow": 8,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "2ch3s7ktrs",
+  "widgetName": "LastSynth"
+}

@@ -1,0 +1,5 @@
+{
+"neonav_id": "{{appsmith.store.neonav_id}}",
+"Name": "{{name_entry.text}}",
+"Tier": 1
+}

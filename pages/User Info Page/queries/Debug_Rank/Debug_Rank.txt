@@ -1,0 +1,3 @@
+{
+  "Tier": {{this.params.newTier}}
+}

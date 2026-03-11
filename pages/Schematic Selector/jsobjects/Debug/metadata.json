@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "697db5243fec2f3159077410_eeeae65a-47ac-4114-8d95-f62d1b0ffb71",
+  "id": "Schematic Selector_Debug",
+  "unpublishedCollection": {
+    "name": "Debug",
+    "pageId": "Schematic Selector",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "selectedRecipeID",
+        "value": "\"\""
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "697db5243fec2f3159077410_4d4dbe89-77e5-4b03-a3e2-a448ee734a43",
+  "id": "Admin_Control_Panel_AdminCheck",
+  "unpublishedCollection": {
+    "name": "AdminCheck",
+    "pageId": "Admin_Control_Panel",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

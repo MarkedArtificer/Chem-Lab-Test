@@ -1,0 +1,75 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": false,
+  "borderRadius": "0px",
+  "bottomRow": 28,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    },
+    {
+      "key": "onDropdownOpen"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "cxa4f34rkc",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "BOLD",
+  "labelText": "Available Recipes",
+  "labelTextColor": "#e0dede",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 41,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 34,
+  "needsErrorInfo": false,
+  "onDropdownOpen": "",
+  "onOptionChange": "{{ \n  storeValue('activeRecipeID', list_unlocked_recipes.selectedOptionValue);\n  showAlert(\"Recipe Loaded: \" + list_unlocked_recipes.selectedOptionLabel, \"info\");\n}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 52,
+  "originalTopRow": 45,
+  "parentColumnSpace": 14.59375,
+  "parentId": "yz0lg21cln",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "serverSideFiltering": false,
+  "sourceData": "{{\n  (() => {\n    const rawData = fetch_recipes.data?.items || fetch_recipes.data || [];\n    if (rawData.length === 0) return [{ label: \"❌ Mac Offline\", value: \"none\" }];\n\n    // Strip \"Tier \" prefix if it exists, leaving just the number\n    const targetTier = String(select_tier.selectedOptionValue).replace(/\\D/g, \"\");\n    const currentUser = appsmith.store.currentUser || {};\n    const playerTier = Number(currentUser.Tier || 0);\n\n    const filtered = rawData.filter(r => {\n      // 1. Tier Match (Loose equality to handle string vs number)\n      if (Number(r.Tier) !== Number(targetTier)) return false;\n\n      // 2. Rank Unlock: Tier 2 players always see Tier 1\n      if (playerTier > Number(targetTier)) return true;\n\n      // 3. Completion Check: Make everything uppercase to avoid case issues\n      const completionField = `T${targetTier}_Completion`;\n      const completionStr = String(currentUser[completionField] || \"\").toUpperCase();\n      const recipeCode = String(r.recipe_code || \"\").toUpperCase();\n      \n      return completionStr.includes(recipeCode);\n    });\n\n    if (filtered.length === 0) {\n      return [{ label: \"🚫 No Unlocked Recipes Found\", value: \"none\" }];\n    }\n\n    return filtered.map(r => ({ label: r.Name, value: r.id }));\n  })()\n}}",
+  "topRow": 21,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "dmulxvh8kt",
+  "widgetName": "list_unlocked_recipes"
+}

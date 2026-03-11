@@ -1,0 +1,57 @@
+{
+  "animateLoading": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 63,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "fv8uqkbya4",
+  "leftColumn": 26,
+  "minWidth": 120,
+  "mobileBottomRow": 71,
+  "mobileLeftColumn": 3,
+  "mobileRightColumn": 19,
+  "mobileTopRow": 67,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (() => {\n    // 1. Double-check we actually have a selection\n    if (!appsmith.store.activeRecipeID) {\n      return showAlert(\"No Schematic Selected!\", \"warning\");\n    }\n\n    // 2. Commit the ID (redundant but safe for state persistence)\n    storeValue('activeRecipeID', appsmith.store.activeRecipeID);\n\n    // 3. Clear transient UI states (like the search bar) so the \n    // selector page is fresh when they return\n    resetWidget(\"input_manual\", true);\n\n    // 4. Execute the hand-off\n    navigateTo('Work Page');\n  })()\n}}",
+  "originalBottomRow": 66,
+  "originalTopRow": 62,
+  "parentColumnSpace": 14.640625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "text": "Start Synthesis",
+  "topRow": 59,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "dv72fwgwid",
+  "widgetName": "Recipe_Confirm"
+}

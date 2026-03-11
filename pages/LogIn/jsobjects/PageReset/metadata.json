@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "697db5243fec2f3159077410_f2e73f45-cd3c-4022-8240-596782d8619a",
+  "id": "LogIn_PageReset",
+  "unpublishedCollection": {
+    "name": "PageReset",
+    "pageId": "LogIn",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

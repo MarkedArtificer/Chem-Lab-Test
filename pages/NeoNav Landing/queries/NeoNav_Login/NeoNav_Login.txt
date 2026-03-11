@@ -1,0 +1,4 @@
+{
+  "username": "{{inp_username.text}}", // email or 10-digit userid [cite: 1551]
+  "password": "{{inp_password.text}}"  // plaintext password [cite: 1552]
+}

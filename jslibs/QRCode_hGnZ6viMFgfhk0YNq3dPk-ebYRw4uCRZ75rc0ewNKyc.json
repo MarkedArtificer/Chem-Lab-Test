@@ -1,0 +1,10 @@
+{
+  "accessor": [
+    "QRCode"
+  ],
+  "defs": "{\"!name\":\"LIB/QRCode\",\"QRCode\":{\"!type\":\"fn()\",\"prototype\":{\"makeCode\":{\"!type\":\"fn()\",\"prototype\":{}},\"makeImage\":{\"!type\":\"fn()\",\"prototype\":{}},\"clear\":{\"!type\":\"fn()\",\"prototype\":{}}},\"CorrectLevel\":{\"L\":{\"!type\":\"number\"},\"M\":{\"!type\":\"number\"},\"Q\":{\"!type\":\"number\"},\"H\":{\"!type\":\"number\"}}}}",
+  "name": "QRCode",
+  "uidString": "QRCode_http://192.168.10.63:8090/qrcode.min.js",
+  "url": "http://192.168.10.63:8090/qrcode.min.js",
+  "version": ""
+}

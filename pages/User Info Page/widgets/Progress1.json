@@ -1,0 +1,54 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 43,
+  "counterClosewise": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "fillColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "progress"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fillColor": "{{appsmith.theme.colors.primaryColor}}",
+  "isCanvas": false,
+  "isIndeterminate": false,
+  "isLoading": false,
+  "isVisible": "{{ appsmith.store.currentUser.Tier < 5 }}",
+  "key": "3xm12up7pg",
+  "leftColumn": 0,
+  "mobileBottomRow": 44,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 26,
+  "mobileTopRow": 40,
+  "needsErrorInfo": false,
+  "originalBottomRow": 43,
+  "originalTopRow": 38,
+  "parentColumnSpace": 6.84375,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "progress": "{{  Math.min(Game_Manager.getCurrentProgress().count / Game_Manager.getCurrentProgress().goal * 100, 100) }}",
+  "progressType": "linear",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 26,
+  "showResult": false,
+  "steps": "1",
+  "topRow": 38,
+  "type": "PROGRESS_WIDGET",
+  "version": 1,
+  "widgetId": "80ldj283v6",
+  "widgetName": "Progress1"
+}

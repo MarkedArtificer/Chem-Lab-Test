@@ -1,0 +1,8 @@
+{
+  "User_Name": "{{Username_Selection.text}}",
+  "Password": "{{Password_Selection.text}}",
+  "Name": "{{NicknameEntry.text}}",
+  "Tier": 1,
+  "T1_Points": 0,
+  "T1_Completion": ""
+}

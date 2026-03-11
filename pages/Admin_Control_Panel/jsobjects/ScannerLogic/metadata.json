@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "697db5243fec2f3159077410_cd5f97ba-1607-456e-9d92-3e1e566cc7bb",
+  "id": "Admin_Control_Panel_ScannerLogic",
+  "unpublishedCollection": {
+    "name": "ScannerLogic",
+    "pageId": "Admin_Control_Panel",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

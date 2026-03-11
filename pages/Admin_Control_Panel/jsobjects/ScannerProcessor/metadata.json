@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "697db5243fec2f3159077410_fad88714-e739-406b-80d7-f3b0cf577cae",
+  "id": "Admin_Control_Panel_ScannerProcessor",
+  "unpublishedCollection": {
+    "name": "ScannerProcessor",
+    "pageId": "Admin_Control_Panel",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

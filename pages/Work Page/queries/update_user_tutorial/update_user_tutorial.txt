@@ -1,0 +1,3 @@
+{
+  "TutorialProgress": {{this.params.progress}}
+}

@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "697db5243fec2f3159077410_7dd24827-fecf-48ee-8276-5bf1f2d00a13",
+  "id": "Schematic Selector_LabManager",
+  "unpublishedCollection": {
+    "name": "LabManager",
+    "pageId": "Schematic Selector",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "selectedRecipeID",
+        "value": "\"\""
+      }
+    ]
+  }
+}
