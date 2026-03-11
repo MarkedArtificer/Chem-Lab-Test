@@ -27,6 +27,7 @@
       }
     ],
     "name": "NeoNav Landing",
-    "slug": "neonav-landing"
+    "slug": "neonav-landing",
+    "uniqueSlug": "neonav-landing"
   }
 }

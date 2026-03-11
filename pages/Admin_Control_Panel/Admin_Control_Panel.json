@@ -27,6 +27,7 @@
       }
     ],
     "name": "Admin_Control_Panel",
-    "slug": "admin-control-panel"
+    "slug": "admin-control-panel",
+    "uniqueSlug": "admin-control-panel"
   }
 }

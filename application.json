@@ -58,6 +58,10 @@
       "isDefault": true
     }
   ],
+  "staticUrlSettings": {
+    "enabled": true,
+    "uniqueSlug": "chem-browser"
+  },
   "unpublishedAppLayout": {
     "type": "FLUID"
   },

@@ -27,6 +27,7 @@
       }
     ],
     "name": "Schematic Selector",
-    "slug": "schematic-selector"
+    "slug": "schematic-selector",
+    "uniqueSlug": "schematic-selector"
   }
 }

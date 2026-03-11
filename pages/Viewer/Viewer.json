@@ -28,6 +28,7 @@
       }
     ],
     "name": "Viewer",
-    "slug": "viewer"
+    "slug": "viewer",
+    "uniqueSlug": "viewer"
   }
 }

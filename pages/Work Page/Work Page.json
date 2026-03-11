@@ -27,6 +27,7 @@
       }
     ],
     "name": "Work Page",
-    "slug": "work-page"
+    "slug": "work-page",
+    "uniqueSlug": "work-page"
   }
 }

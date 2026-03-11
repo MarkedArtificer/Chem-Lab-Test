@@ -27,6 +27,7 @@
       }
     ],
     "name": "LogIn",
-    "slug": "login"
+    "slug": "login",
+    "uniqueSlug": "login"
   }
 }

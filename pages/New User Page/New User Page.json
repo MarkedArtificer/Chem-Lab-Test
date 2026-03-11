@@ -27,6 +27,7 @@
       }
     ],
     "name": "New User Page",
-    "slug": "new-user-page"
+    "slug": "new-user-page",
+    "uniqueSlug": "new-user-page"
   }
 }
