@@ -28,7 +28,6 @@
       }
     ],
     "name": "Viewer",
-    "slug": "viewer",
-    "uniqueSlug": "viewer"
+    "slug": "viewer"
   }
 }
