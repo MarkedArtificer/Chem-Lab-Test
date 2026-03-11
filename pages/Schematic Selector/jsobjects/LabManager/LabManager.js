@@ -31,23 +31,6 @@ export default {
       value: r.id
     }));
 },
-/*getVisibleRecipes: () => {
-  // 1. Grab the raw data from your Mac
-  const rawData = fetch_recipes.data?.items || fetch_recipes.data || [];
-  
-  // 2. Identify what the dropdown is currently set to
-  const targetTier = Number(select_tier.selectedOptionValue);
-
-  // 3. Filter only by the Tier number
-  return rawData
-    .filter(r => Number(r.Tier) === targetTier)
-    .map(r => ({
-      label: r.Name, // This is what shows in the Select
-      value: r.id,   // This is the underlying ID
-      id: r.id,      // Included for the List widget's 'Data Identifier'
-      Name: r.Name   // Included for the List widget display
-    }));
-},*/
 	
 	
   manualSearch: () => {
