@@ -61,7 +61,7 @@ export default {
 
   // 4. Reset & Navigate
   returnToSelector: () => {
-    storeValue('activeRecipeID', undefined);
+  //  storeValue('activeRecipeID', undefined);
    navigateTo('User Info Page');
   }
 }

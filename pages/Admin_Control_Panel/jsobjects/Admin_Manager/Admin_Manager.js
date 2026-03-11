@@ -120,7 +120,8 @@ export default {
 				tierField: field,
 				newString: updatedStr,
 				lastCompletedID: data.recipe_id,
-				newTier: earnedTier
+				newTier: earnedTier,
+				Active_Project: undefined
 			});
 
 			showAlert(`Verification logged for ${data.player_name}`, "success");

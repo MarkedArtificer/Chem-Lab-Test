@@ -1,13 +1,28 @@
 export default {
+
+	updateChemist: () =>{
+	const userData = chemist_status_update.run();
+//	return	chemist_status_update.run();
+	storeValue('currentUser', userData); 
+
+	},
+	
   // Pull current settings from the query
   getThresholds: () => {
     // Ensure we handle the first record of the array from PocketBase
     const data = fetch_game_settings.data;
     return (Array.isArray(data) ? data[0] : data) || { T1Threshold: 2, T2Threshold: 4, T3Threshold: 4, T4Threshold: 4 };
   },
+	
+	
 	instantiatePlayer: () => {
-	storeValue('currentUser', pb_check_chemist.data.items[0]);
+		storeValue('currentUser', pb_check_chemist.data.items[0]);
 	},
+	
+	updateActiveRecipe: () => {
+		storeValue("activeRecipeID", appsmith.store.currentUser?.Active_Project)
+	},
+	
 tierUpdate: () => {
     const user = appsmith.store.currentUser || {};
     const settings = Game_Manager.getThresholds();
@@ -65,16 +80,50 @@ tierUpdate: () => {
 			
     }
   },
-	getLastRecipeName: () => {
+	
+	
+	getPriorityID: () => {
+		const activeID = appsmith.store.activeRecipeID ?? appsmith.store.currentUser?.Active_Project;
+		const lastID = appsmith.store.currentUser.Last_Completed;	
+		// Return activeID if it exists; otherwise, return lastID
+		if (activeID.length > 0)
+			{
+				return activeID;
+			}
+			else
+				{
+					return lastID;
+				}	
+	},
+	
+	getPriorityStatus: () => {
+		const activeID = appsmith.store.activeRecipeID ?? appsmith.store.currentUser?.Active_Project;
+		if (activeID.length !== 0)
+			{
+				return "Current Synthesis: ";
+			}
+			else
+				{
+					return "Last Synthesized: "
+				}	
+	},
+	
+	
+	getActiveRecipeName: () => {
   const recipes = fetch_recipes.data?.items || [];
-  const lastId = appsmith.store.currentUser?.Last_Completed;
+  const actId = Game_Manager.getPriorityID();
+		
+  if (!actId || recipes.length === 0) return "None";
   
-  if (!lastId || recipes.length === 0) return "None";
-  
-  const match = recipes.find(r => r.id === lastId);
+  const match = recipes.find(r => r.id === actId);
   return match ? match.Name : "None";
 },
 	
+	 resetActiveProject: () => {
+ 	storeValue('activeRecipeID', undefined);
+	clear_active_project.run();
+	Game_Manager.updateChemist();
+},
 	
 checkAdminStatus: async () => {
     // 1. Run the query we just created

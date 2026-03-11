@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "697db5243fec2f3159077410_b09c7888-06ea-46cf-a37f-2faa7b04b1d4",
-  "id": "User Info Page_Game_Manager.getLastRecipeName",
+  "gitSyncId": "697db5243fec2f3159077410_2899ca84-b715-477d-a4fe-5fc84a3447b5",
+  "id": "User Info Page_Game_Manager.getPriorityStatus",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "Game_Manager.getLastRecipeName",
-    "name": "getLastRecipeName",
+    "fullyQualifiedName": "Game_Manager.getPriorityStatus",
+    "name": "getPriorityStatus",
     "pageId": "User Info Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

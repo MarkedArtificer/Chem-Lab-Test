@@ -1,7 +1,8 @@
 export default {
   // 1. Pull the recipe data based on the stored ID
   getActiveData: () => {
-    const id = appsmith.store.currentUser.Last_Completed;
+    
+		const id = Game_Manager.getPriorityID();
     // Safety check: Don't run if we don't have an ID or data yet
     if (!id || !fetch_recipes.data) return null;
 

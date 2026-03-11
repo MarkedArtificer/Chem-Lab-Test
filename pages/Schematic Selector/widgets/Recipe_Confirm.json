@@ -36,7 +36,7 @@
   "mobileRightColumn": 19,
   "mobileTopRow": 67,
   "needsErrorInfo": false,
-  "onClick": "{{\n  (() => {\n    // 1. Double-check we actually have a selection\n    if (!appsmith.store.activeRecipeID) {\n      return showAlert(\"No Schematic Selected!\", \"warning\");\n    }\n\n    // 2. Commit the ID (redundant but safe for state persistence)\n    storeValue('activeRecipeID', appsmith.store.activeRecipeID);\n\n    // 3. Clear transient UI states (like the search bar) so the \n    // selector page is fresh when they return\n    resetWidget(\"input_manual\", true);\n\n    // 4. Execute the hand-off\n    navigateTo('Work Page');\n  })()\n}}",
+  "onClick": "{{\n  (async () => {\n    // 1. Double-check we actually have a selection\n    const recipeId = appsmith.store.activeRecipeID;\n    const playerId = appsmith.store.currentUser.id; // Ensure you have the current player's ID\n\n    if (!recipeId) {\n      return showAlert(\"No Schematic Selected!\", \"warning\");\n    }\n\n    try {\n      // 2. NEW: Patch the Active_Project to PocketBase\n      // We do this first so the database is the \"Source of Truth\"\n      await update_active_project.run({ \n        playerId: playerId, \n        recipeId: recipeId \n      });\n\n      // 3. Commit to local store for UI snappiness\n      storeValue('activeRecipeID', recipeId);\n\n      // 4. Clear transient UI states\n      resetWidget(\"input_manual\", true);\n\n      // 5. Execute the hand-off\n      navigateTo('Work Page');\n      \n    } catch (error) {\n      showAlert(\"Failed to sync project to server. Check connection.\", \"error\");\n    }\n  })()\n}}",
   "originalBottomRow": 66,
   "originalTopRow": 62,
   "parentColumnSpace": 14.640625,

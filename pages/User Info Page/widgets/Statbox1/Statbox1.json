@@ -9,7 +9,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 100,
+      "bottomRow": 160,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -72,7 +72,7 @@
   "mobileTopRow": 14,
   "needsErrorInfo": false,
   "originalBottomRow": 23,
-  "originalTopRow": 13,
+  "originalTopRow": 7,
   "parentColumnSpace": 10.015625,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -81,7 +81,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 25,
   "shouldScrollContents": true,
-  "topRow": 13,
+  "topRow": 7,
   "type": "STATBOX_WIDGET",
   "widgetId": "d2xsmwmioo",
   "widgetName": "Statbox1"
