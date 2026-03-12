@@ -14,6 +14,13 @@ export default {
 		storeValue('currentUser', pb_check_chemist.data.items[0]);
 	},
 	
+	checkActiveProject: async ()=>{
+		const load = await get_player_info.run();
+		storeValue('currentUser', load)
+		storeValue('activeRecipeID', appsmith.store.currentUser.Active_Project);
+	},
+	
+	
 /*	updateActiveRecipe: () => {
 		storeValue("activeRecipeID", appsmith.store.currentUser?.Active_Project)
 	},*/
@@ -142,7 +149,6 @@ checkAdminStatus: async () => {
 resetProject: async () => {
     // 1. Clear the field in the database
     await clear_active_project.run();
-		const id = appsmith.store.currentUser.id;
     // 2. Fetch the fresh data from the server
     const freshData = await get_player_info.run();
 

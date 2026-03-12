@@ -44,7 +44,7 @@
     ],
     "name": "fetch_staff_record",
     "pageId": "User Info Page",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

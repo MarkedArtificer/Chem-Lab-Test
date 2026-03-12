@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "697db5243fec2f3159077410_557f4634-1284-4a32-9937-7f67e8ae0a92",
-  "id": "User Info Page_Game_Manager.checkAdminStatus",
+  "gitSyncId": "697db5243fec2f3159077410_0e088aef-4e7a-44c9-bdb8-0d0423cd7396",
+  "id": "User Info Page_Game_Manager.checkActiveProject",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "Game_Manager.checkAdminStatus",
-    "name": "checkAdminStatus",
+    "fullyQualifiedName": "Game_Manager.checkActiveProject",
+    "name": "checkActiveProject",
     "pageId": "User Info Page",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }
