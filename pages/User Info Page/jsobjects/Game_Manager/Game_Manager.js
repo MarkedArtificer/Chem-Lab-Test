@@ -12,7 +12,6 @@ export default {
 	
 	instantiatePlayer: () => {
 		storeValue('currentUser', pb_check_chemist.data.items[0]);
-		AuthManager.verifyAdmin();
 	},
 	
 	checkActiveProject: async ()=>{
