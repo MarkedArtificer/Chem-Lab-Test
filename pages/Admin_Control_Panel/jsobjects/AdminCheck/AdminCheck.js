@@ -1,6 +1,7 @@
 export default {
 // OnPageLoad for Admin_Control_Panel
 PlayerBounce: () => {
-  !appsmith.store.isAdmin ? navigateTo('Dashboard') : null 
+  if (!appsmith.store.isAdmin)
+	{navigateTo('User Info Page') }
 }
 }
