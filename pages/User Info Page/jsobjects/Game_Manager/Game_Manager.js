@@ -129,21 +129,19 @@ tierUpdate: () => {
 	
 checkAdminStatus: async () => {
     // 1. Run the query we just created
-    await fetch_staff_record.run();
-
     // 2. PocketBase returns data inside an "items" array
-    const staffData = fetch_staff_record.data?.items?.[0];
+    const staffData =  await fetch_staff_record.run();
 
-    if (staffData && staffData.role) {
+    if (staffData.length !== 0) {
       // SUCCESS: User is a staff member
       await storeValue("isAdmin", true);
-      await storeValue("staffRole", staffData.role);
-      
-      showAlert(`AUTHORIZED: ${staffData.role} STATUS ACTIVE`, "success");
+   //   await storeValue("staffRole", staffData.role);
+   // ${staffData.role}   
+      showAlert(`AUTHORIZED: ADMINISTRATOR STATUS ACTIVE`, "success");
     } else {
       // FAILURE: Regular player
       await storeValue("isAdmin", false);
-      await storeValue("staffRole", null);
+ //     await storeValue("staffRole", "");
   }
 },
 resetProject: async () => {

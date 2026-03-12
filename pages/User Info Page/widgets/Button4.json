@@ -33,7 +33,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{ appsmith.store.isAdmin }}",
+  "isVisible": "{{appsmith.store.isAdmin}}",
   "key": "fga9ztcmvt",
   "leftColumn": 0,
   "minWidth": 120,
