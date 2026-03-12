@@ -1,6 +1,6 @@
 {
   "gitSyncId": "697db5243fec2f3159077410_05807332-a08e-4b04-9e7f-f57e6561c9ce",
-  "id": "User Info Page_fetch_staff_record",
+  "id": "User Info Page_check_admin_status",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -25,7 +25,11 @@
       "queryParameters": [
         {
           "key": "filter",
-          "value": "(user='{{appsmith.store.currentUser.id}}')"
+          "value": "(user = \"{{appsmith.store.currentUser.id}}\")"
+        },
+        {
+          "key": "fields",
+          "value": "id"
         }
       ],
       "timeoutInMillisecond": 10000
@@ -42,7 +46,7 @@
         "key": "queryParameters[0].value"
       }
     ],
-    "name": "fetch_staff_record",
+    "name": "check_admin_status",
     "pageId": "User Info Page",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

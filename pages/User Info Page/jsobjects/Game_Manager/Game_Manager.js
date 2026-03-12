@@ -12,6 +12,7 @@ export default {
 	
 	instantiatePlayer: () => {
 		storeValue('currentUser', pb_check_chemist.data.items[0]);
+		AuthManager.verifyAdmin();
 	},
 	
 	checkActiveProject: async ()=>{
@@ -20,11 +21,7 @@ export default {
 		storeValue('activeRecipeID', appsmith.store.currentUser.Active_Project);
 	},
 	
-	
-/*	updateActiveRecipe: () => {
-		storeValue("activeRecipeID", appsmith.store.currentUser?.Active_Project)
-	},*/
-	
+		
 tierUpdate: () => {
     const user = appsmith.store.currentUser || {};
     const settings = Game_Manager.getThresholds();
@@ -121,29 +118,6 @@ tierUpdate: () => {
   return match ? match.Name : "None";
 },
 	
-/*	 resetActiveProject: () => {
- 	storeValue('activeRecipeID', undefined);
-	clear_active_project.run();
-	Game_Manager.updateChemist();
-},*/
-	
-checkAdminStatus: async () => {
-    // 1. Run the query we just created
-    // 2. PocketBase returns data inside an "items" array
-    const staffData =  await fetch_staff_record.run();
-
-    if (staffData.length !== 0) {
-      // SUCCESS: User is a staff member
-      await storeValue("isAdmin", true);
-   //   await storeValue("staffRole", staffData.role);
-   // ${staffData.role}   
-      showAlert(`AUTHORIZED: ADMINISTRATOR STATUS ACTIVE`, "success");
-    } else {
-      // FAILURE: Regular player
-      await storeValue("isAdmin", false);
- //     await storeValue("staffRole", "");
-  }
-},
 resetProject: async () => {
     // 1. Clear the field in the database
     await clear_active_project.run();
@@ -158,14 +132,5 @@ resetProject: async () => {
 
     showAlert("Project Reset", "success");
   }
-
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
